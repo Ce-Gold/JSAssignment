@@ -1,17 +1,21 @@
-// Hämta HTML-element
+ // Hämtar sökrutan från HTML så jag kan läsa vad användaren skriver
 const searchInput = document.getElementById("searchInput");
+// Hämtar knappen som användaren ska klicka på
 const searchBtn = document.getElementById("searchBtn");
-const results = document.getElementById("results");
+//Hämtar platsen där resultaten ska visas
+ const results = document.getElementById("results");
 
 
 //test
-// Funktion som gör API-anrop
+// Funktion som söker efter böcker/ gör API-anrop
 async function searchBooks() {
 
-  // Tar texten från sökfältet
+  // Hämtar texten som användaren har skrivit i sökfältet
   const query = searchInput.value;
 
+//Kollar om användaren skrev något
   if (!query) {
+    // Visar ett meddelande om sökrutan är tom
     results.innerHTML = "<p>Skriv något i sökfältet!</p>";
     return;
   }

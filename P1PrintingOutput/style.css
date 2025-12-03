@@ -1,4 +1,4 @@
-/* Bas-stil */
+/* Grundläggande stil för hela sidan  */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,35 +7,96 @@ body {
   background: #778899;
 }
 
-header {
+
+/*h1 {
   padding: 20px;
-  background: #4a7cfe;
+  background: #778899;
+  color: black;
+  font-size: 50px;
+
+}*/
+/*rubrik*/
+h1 {
   color: white;
+  font-size: 48px;
+  margin: 40px 0 30px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
 }
-
+/* Centrerar sökfältet */
 .search-section {
-  margin: 30px 0;
+  margin: 30px auto;
+  max-width: 600px;
 }
 
-input {
+/*input {
   padding: 10px;
   width: 250px;
   font-size: 16px;
+}*/
+
+/* sökruta med rundade hörn och lite skugga */
+input {
+  padding: 12px;
+  width: 300px;
+  font-size: 16px;
+  border: 2px solid white;
+  border-radius: 25px;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
+/* Sökrutan får en border när man klickar i den */
+input:focus {
+  border-color: #50396B;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+/*button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;*/
+
+
+
+/* Gör knappen mer interaktiv och tydlig */
 button {
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
+/* Knappen byter bakgrundsfärg och textfärg när man hovrar över den */
+button:hover {
+  background: #50396B;
+  color: white;
+}
+
+
 /* Resultatkorten */
+/*#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px; /* Mellanrum mellan böckerna*/
+  /*margin-top: 20px;
+  }*/
+
+/* Rutnät för bokkorten med luftigt mellanrum */
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px; /* Mellanrum mellan böckerna */
-  margin-top: 20px;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
+
 
 .book {
   border: 1px solid #ccc;
@@ -57,3 +118,8 @@ button {
   width: 100%;
   border-radius: 6px;
 }
+
+
+
+
+
