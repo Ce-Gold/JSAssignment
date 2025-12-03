@@ -88,37 +88,72 @@ button:hover {
   }*/
 
 /* Rutnät för bokkorten med luftigt mellanrum */
+/*#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+/* Rutnät för bokkorten med luftigt mellanrum */
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
   margin: 40px auto;
-  max-width: 1200px;
+  max-width: 1200px; /* Bred när böcker visas */
   padding: 0 20px;
 }
 
-
-.book {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 6px;
-  background: #f7f7f7;
+/* När bara ett meddelande visas, gör området smalare */
+#results:has(p:only-child) {
+  max-width: 600px; /* Samma bredd som sökfältet */
 }
 
-
+/* Centrerar meddelanden i resultat-området */
+#results p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
+/* Varje bokkort med vit bakgrund och skugga */
 .book-card {
-  width: 200px;
-  padding: 10px;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #ddd;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
+/* Kortet lyfts lite när man hovrar */
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Bokomslaget fyller kortets bredd */
 .book-card img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
+/* Boktiteln */
+.book-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px 0;
+  color: #333;
+}
+
+/* Författarnamnet */
+.book-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
 
 
 
