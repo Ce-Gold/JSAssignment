@@ -9,20 +9,28 @@
 
 <h1>Hitta din bok</h1>
 
-<!--<label for="searchInput"></label><input id="searchInput" type="text" placeholder="Skriv ett boknamn...">
-<button id="searchBtn">Sök</button>-->
-
-<!-- Container för sökfältet och knappen -->
+<!-- Sökfält + knapp -->
 <div class="search-section">
   <label for="searchInput"></label>
   <input id="searchInput" type="text" placeholder="Skriv ett boknamn...">
   <button id="searchBtn">Sök</button>
+
+  <p id="searchMessage" class="message"></p>
+
+  <!-- Sorteringsval (dold tills resultat visas) -->
+  <select id="sortSelect" class="sort-select" style="display:none;">
+    <option value="">Sortera resultat</option>
+    <option value="title-asc">Titel A–Ö</option>
+    <option value="title-desc">Titel Ö–A</option>
+    <option value="year-asc">Utgivningsår stigande</option>
+    <option value="year-desc">Utgivningsår fallande</option>
+  </select>
 </div>
 
+<!-- Resultat visas här -->
 <div id="results"></div>
 
 <script src="app.js"></script>
+
 </body>
 </html>
-
-

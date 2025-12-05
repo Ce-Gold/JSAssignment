@@ -7,14 +7,6 @@ body {
   background: #778899;
 }
 
-
-/*h1 {
-  padding: 20px;
-  background: #778899;
-  color: black;
-  font-size: 50px;
-
-}*/
 /*rubrik*/
 h1 {
   color: white;
@@ -23,19 +15,14 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-weight: bold;
 }
+
 /* Centrerar sökfältet */
 .search-section {
   margin: 30px auto;
   max-width: 600px;
 }
 
-/*input {
-  padding: 10px;
-  width: 250px;
-  font-size: 16px;
-}*/
-
-/* sökruta med rundade hörn och lite skugga */
+/* sökruta */
 input {
   padding: 12px;
   width: 300px;
@@ -43,23 +30,15 @@ input {
   border: 2px solid white;
   border-radius: 25px;
   outline: none;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-/* Sökrutan får en border när man klickar i den */
 input:focus {
   border-color: #50396B;
   box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
 }
 
-/*button {
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;*/
-
-
-
-/* Gör knappen mer interaktiv och tydlig */
+/* Sökknapp */
 button {
   padding: 10px 15px;
   font-size: 16px;
@@ -69,92 +48,71 @@ button {
   border: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-/* Knappen byter bakgrundsfärg och textfärg när man hovrar över den */
 button:hover {
   background: #50396B;
   color: white;
 }
+/* Vad håller du på med*/
 
-
-/* Resultatkorten */
-/*#results {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px; /* Mellanrum mellan böckerna*/
-  /*margin-top: 20px;
-  }*/
-
-/* Rutnät för bokkorten med luftigt mellanrum */
-/*#results {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 25px;
-  margin: 40px auto;
-  max-width: 600px;
-  padding: 0 20px;
+/* Meddelande */
+.message {
+  color: white;
+  font-size: 18px;
+  margin-top: 15px;
 }
 
-/* Rutnät för bokkorten med luftigt mellanrum */
+.sort-select {
+  margin: 20px auto 0 auto; /* auto i mitten = centrerad */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  display: block;        /* gör att auto-marginal fungerar */
+  width: 200px;          /* lagom bred dropdown */
+  text-align: center;    /* centrerar texten i knappen */
+}
+
+
+/* Resultatrutnät */
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
   margin: 40px auto;
-  max-width: 1200px; /* Bred när böcker visas */
+  max-width: 1200px;
   padding: 0 20px;
 }
 
-/* När bara ett meddelande visas, gör området smalare */
-#results:has(p:only-child) {
-  max-width: 600px; /* Samma bredd som sökfältet */
-}
-
-/* Centrerar meddelanden i resultat-området */
-#results p {
-  grid-column: 1 / -1;
-  text-align: center;
-  color: white;
-  font-size: 18px;
-  margin-top: 20px;
-}
-/* Varje bokkort med vit bakgrund och skugga */
+/* Bok-kort */
 .book-card {
   background: white;
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
-/* Kortet lyfts lite när man hovrar */
 .book-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-/* Bokomslaget fyller kortets bredd */
 .book-card img {
   width: 100%;
   border-radius: 8px;
 }
 
-/* Boktiteln */
 .book-card h3 {
   font-size: 16px;
   margin: 10px 0 5px 0;
   color: #333;
 }
 
-/* Författarnamnet */
 .book-card p {
   font-size: 14px;
   color: #666;
   margin: 0;
 }
-
-
-
-
