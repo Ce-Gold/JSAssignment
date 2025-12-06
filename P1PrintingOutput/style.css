@@ -7,7 +7,7 @@ body {
   background: #778899;
 }
 
-/*rubrik*/
+/* rubrik med vit text och skugga */
 h1 {
   color: white;
   font-size: 48px;
@@ -32,7 +32,7 @@ input {
   outline: none;
   transition: 0.3s;
 }
-
+/* Sökrutan får färgad border när man klickar i den */
 input:focus {
   border-color: #50396B;
   box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
@@ -51,19 +51,21 @@ button {
   transition: 0.3s;
 }
 
+/* Knappen byter färg när man hovrar över den */
 button:hover {
   background: #50396B;
   color: white;
 }
-/* Vad håller du på med*/
 
-/* Meddelande */
+
+/* Meddelande som visas när något går fel */
 .message {
   color: white;
   font-size: 18px;
   margin-top: 15px;
 }
 
+/* Sorteringsmeny som är centrerad */
 .sort-select {
   margin: 20px auto 0 auto; /* auto i mitten = centrerad */
   padding: 10px;
@@ -71,12 +73,12 @@ button:hover {
   border-radius: 8px;
   border: none;
   display: block;        /* gör att auto-marginal fungerar */
-  width: 200px;          /* lagom bred dropdown */
+  width: 200px;
   text-align: center;    /* centrerar texten i knappen */
 }
 
 
-/* Resultatrutnät */
+/* Resultatrutnät där bokkorten placeras */
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -86,7 +88,7 @@ button:hover {
   padding: 0 20px;
 }
 
-/* Bok-kort */
+/* Bokkort */
 .book-card {
   background: white;
   padding: 15px;
@@ -94,23 +96,23 @@ button:hover {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: 0.3s;
 }
-
+/* Kortet lyfts lite när man hovrar över det */
 .book-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
-
+/* Bokomslaget fyller kortets bredd */
 .book-card img {
   width: 100%;
   border-radius: 8px;
 }
-
+/* Boktiteln i kortet */
 .book-card h3 {
   font-size: 16px;
   margin: 10px 0 5px 0;
   color: #333;
 }
-
+/* Författarnamnet i kortet */
 .book-card p {
   font-size: 14px;
   color: #666;

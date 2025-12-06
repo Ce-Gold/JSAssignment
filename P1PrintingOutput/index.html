@@ -2,22 +2,29 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
+  <!-- Sidans titel som visas i fliken -->
   <title>Hitta din bok</title>
+  <!-- Länk till CSS-filen för styling -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+<!-- Huvudrubrik på sidan -->
 <h1>Hitta din bok</h1>
 
 <!-- Sökfält + knapp -->
+<!-- Container som håller sökfältet, knappen och sortering centrerade -->
 <div class="search-section">
+  <!-- Label för sökrutan (tom men behövs för tillgänglighet) -->
   <label for="searchInput"></label>
+  <!-- Sökrutan där användaren skriver boknamn -->
   <input id="searchInput" type="text" placeholder="Skriv ett boknamn...">
+  <!-- Knappen man klickar på för att starta sökningen-->
   <button id="searchBtn">Sök</button>
-
+  <!-- Tom plats där felmeddelanden visas -->
   <p id="searchMessage" class="message"></p>
 
-  <!-- Sorteringsval (dold tills resultat visas) -->
+  <!-- Dropdown-meny för att sortera resultat ,som är dold från början -->
   <select id="sortSelect" class="sort-select" style="display:none;">
     <option value="">Sortera resultat</option>
     <option value="title-asc">Titel A–Ö</option>
@@ -30,6 +37,7 @@
 <!-- Resultat visas här -->
 <div id="results"></div>
 
+<!-- Länk till JavaScript-filen som hanterar sökningen -->
 <script src="app.js"></script>
 
 </body>

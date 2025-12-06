@@ -50,7 +50,7 @@ async function searchBooks() {
     // Omvandlar svaret till ett format vi kan läsa
     const data = await response.json();
 
-    // Sparar de första 20 böckerna i lastBooks-variabeln
+    // Sparar de första 20 böckerna i lastBooks-variabeln.
     lastBooks = data.docs.slice(0, 20);
 
     // Om vi hittat böcker, visa sorteringsmenyn
@@ -119,7 +119,7 @@ sortSelect.addEventListener("change", () => {
   // Om inga böcker finns, gör ingenting
   if (lastBooks.length === 0) return;
 
-  // Skapar en kopia av bokarna som vi kan sortera
+  // Skapar en kopia av bökerna som vi kan sortera
   let sorted = [...lastBooks];
 
   // Kollar vilket sorteringsval användaren valde
