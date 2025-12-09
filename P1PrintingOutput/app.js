@@ -13,7 +13,7 @@ const searchMessage = document.getElementById("searchMessage");
 // Hämtar dropdown-menyn för sortering
 const sortSelect = document.getElementById("sortSelect");
 
-// Variabel som sparar de senaste sökresultaten så vi kan sortera dem
+// Skapar en tom lista där vi sparar böckerna från senaste sökningen,behövs för att kunna sortera resultaten senare
 let lastBooks = [];
 
 // ===========================
@@ -24,7 +24,7 @@ async function searchBooks() {
   // Hämtar texten som användaren har skrivit och tar bort mellanslag
   const query = searchInput.value.trim();
 
-  // Tömmer gamla felmeddelanden
+  // Tömmer gamla felmeddelanden, om användaren fått upp ett felmeddelande men sedan börjar skriva, försvinner meddelandet.
   searchMessage.textContent = "";
 
   // Tömmer gamla sökresultat
@@ -37,20 +37,34 @@ async function searchBooks() {
   if (!query) {
     // Visar ett meddelande om sökrutan är tom
     searchMessage.textContent = "Skriv något i sökfältet!";
-    return; // Stoppar funktionen här
+    return; // Stoppar funktionen här, koden körs inte om query är tom
+
   }
 
   // Skapar webbadressen till bokbiblioteket med sökordet
+  // backticks ``tillåter att stoppa in variabler mitt i en text
+  //search.json sökfunktionen som ger svar i jsonformat
+  //?q = frågan kommer här
+  //${...} = stoppar in variabeln, det användaren skrev
+  //encodeURIComponent() = gör om text till webbsäkert format = inga mellansslag och specialtecken
+  // mellanslag kommer att visas som %20, åäö som %
   const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`;
 
   try {
-    // Skickar en förfrågan till bokbiblioteket
+    // Skickar en förfrågan till bokbiblioteket och vänta på svar.
     const response = await fetch(url);
-
-    // Omvandlar svaret till ett format vi kan läsa
+    //fectch -hämta data frän en adress
+    // await- invänta  svar innan du fortsätter
+    // json- mvandlar svaret till ett format vi kan läsa
+    //Packa upp svaret och vänta till klart
     const data = await response.json();
 
     // Sparar de första 20 böckerna i lastBooks-variabeln.
+    //data är hela svaret från API:et efter vi packat upp det med .json()
+    // slice är att vi klipper ut en del av listan. De 20 första böckerna. (start, slut).
+    // open library kallar böcker för docs.
+    // Summering: Tar de första 20 böckerna från API:ets svar och sparar dem
+    // så vi kan sortera dem senare när användaren vill
     lastBooks = data.docs.slice(0, 20);
 
     // Om vi hittat böcker, visa sorteringsmenyn
@@ -64,6 +78,7 @@ async function searchBooks() {
   } catch (err) {
     // Visar ett felmeddelande om något går fel
     searchMessage.textContent = "Kunde inte hämta böcker.";
+    // skriver ut felet i webläsarens konsol
     console.error(err);
   }
 }
@@ -73,10 +88,10 @@ async function searchBooks() {
 // ===========================
 // Funktion som visar böckerna på sidan
 function displayResults(books) {
-  // Tömmer området så gamla resultat försvinner
+  // Tömmer området så gamla resultat försvinner.
   results.innerHTML = "";
 
-  // Kollar om inga böcker hittades
+  // Kollar om inga böcker hittades. Om antal böcker är exakt noll kör koden inuti if.
   if (books.length === 0) {
     results.innerHTML = "<p>Inga böcker hittades.</p>";
     return; // Stoppar funktionen här

@@ -1,120 +1,148 @@
-/* Grundläggande stil för hela sidan  */
+/* Grundläggande stil för hela sidan */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background: #778899;
+  font-family: Arial, sans-serif; /* Väljer typsnittet Arial, sans-serif är backup om Arial saknas */
+  margin: 0; /* Tar bort mellanrum automatiskt runt hela sidan */
+  padding: 0; /* Tar bort inre mellanrum  automatiskt*/
+  text-align: center; /* Centrerar all text på sidan */
+  background: #778899; /* Bakgrundsfärg (blågrå) */
 }
 
-/* rubrik med vit text och skugga */
+/* Rubrik med vit text och skugga */
 h1 {
-  color: white;
-  font-size: 48px;
-  margin: 40px 0 30px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-weight: bold;
+  color: white; /* Textfärgen är vit */
+  font-size: 48px; /* Textstorleken är 48 pixlar */
+  margin: 40px 0 30px 0; /* Mellanrum: 40px ovanför, 0 på sidorna, 30px under */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Skugga: 2px höger, 2px ner, 4px oskärpa, svart med 30% opacitet */
+  font-weight: bold; /* Gör texten fet */
 }
 
-/* Centrerar sökfältet */
+/* Centrerar sökfältet och allt innehåll i search-section */
 .search-section {
-  margin: 30px auto;
-  max-width: 600px;
+  margin: 30px auto; /* 30px ovanför och under, auto på sidorna = centrerad */
+  max-width: 600px; /* Maximal bredd är 600 pixlar */
 }
 
-/* sökruta */
+/* Sökruta med rundade hörn och vit bakgrund */
 input {
-  padding: 12px;
-  width: 300px;
-  font-size: 16px;
-  border: 2px solid white;
-  border-radius: 25px;
-  outline: none;
-  transition: 0.3s;
+  padding: 12px; /* Inre mellanrum runt texten i sökrutan (12px på alla sidor) */
+  width: 300px; /* Bredden på sökrutan är 300 pixlar */
+  font-size: 16px; /* Textstorleken inuti sökrutan är 16 pixlar */
+  border: 2px solid white; /* Ram: 2 pixlar tjock, solid linje, vit färg */
+  border-radius: 25px; /* Rundade hörn med 25 pixlars radie (ju högre värde, desto rundare) */
+  outline: none; /* Tar bort den blå ramen som visas när man klickar i rutan */
+  transition: 0.3s; /* Förändringar t.ex. färgbyten tar 0.3 sekunder  */
+  background: white; /* Bakgrundsfärgen inuti sökrutan är vit */
 }
+
 /* Sökrutan får färgad border när man klickar i den */
 input:focus {
-  border-color: #50396B;
-  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+  border-color: #50396B; /* Ändrar ramfärgen till lila när man är i sökrutan  */
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5); /* Ljuseffekt runt rutan: ingen förskjutning (0 0), 10px oskärpa, röd färg med 50% opacitet */
 }
 
-/* Sökknapp */
+/* Sökknapp med vit bakgrund och svart text */
 button {
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  background: white;
-  color: black;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
+  padding: 10px 15px; /* Inre mellanrum: 10px ovanför/under, 15px på sidorna */
+  font-size: 16px; /* Textstorleken är 16 pixlar */
+  cursor: pointer; /* Musen blir en hand när man hovrar över knappen och visar att den är klickbar */
+  background: white; /* Bakgrundsfärgen är vit */
+  color: black; /* Textfärgen är svart */
+  border: none; /* Ingen ram runt knappen */
+  border-radius: 8px; /* Rundade hörn med 8 pixlars radie */
+  font-weight: bold; /* Fet text */
+  transition: 0.3s; /* Alla förändringar tar 0.3 sekunder */
 }
 
-/* Knappen byter färg när man hovrar över den */
+/* Knappen byter bakgrundsfärg till lila och textfärg till vit när man hovrar över den */
 button:hover {
-  background: #50396B;
-  color: white;
+  background: #50396B; /* Bakgrundsfärgen blir lila när man hovrar */
+  color: white; /* Textfärgen blir vit när man hovrar */
 }
 
-
-/* Meddelande som visas när något går fel */
+/* Meddelande som visas när något går fel eller sökrutan är tom */
 .message {
-  color: white;
-  font-size: 18px;
-  margin-top: 15px;
+  color: white; /* Textfärgen är vit */
+  font-size: 18px; /* Textstorleken är 18 pixlar */
+  margin-top: 15px; /* Mellanrum ovanför meddelandet (15 pixlar) */
 }
 
-/* Sorteringsmeny som är centrerad */
+/* Sorteringsmeny som är centrerad med vit bakgrund */
 .sort-select {
-  margin: 20px auto 0 auto; /* auto i mitten = centrerad */
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  display: block;        /* gör att auto-marginal fungerar */
-  width: 200px;
-  text-align: center;    /* centrerar texten i knappen */
+  margin: 20px auto 0 auto; /* Mellanrum: 20px ovanför, auto på höger/vänster (=centrerad), 0 under. Centrerar knappen (fungerar bara på blockelement) */
+  padding: 10px; /* Inre mellanrum runt texten (10 pixlar på alla sidor) */
+  font-size: 16px; /* Textstorleken är 16 pixlar */
+  border-radius: 8px; /* Rundade hörn med 8 pixlars radie */
+  border: none; /* Ingen ram runt dropdown-menyn */
+  display: block; /* Gör elementet till ett blockelement (tar egen rad), vilket gör att auto-marginal fungerar för centrering */
+  width: 200px; /* Bredden är 200 pixlar */
+  text-align: center; /* Centrerar texten inuti dropdown-menyn */
+  background: white; /* Bakgrundsfärgen är vit */
 }
 
-
-/* Resultatrutnät där bokkorten placeras */
+/* Resultgrid där bokkorten placeras */
 #results {
-  display: grid;
+  display: grid; /* Använder CSS Grid för att skapa ett rutnät */
+  /* grid-template-columns bestämmer hur många kolumner gridet ska ha
+     repeat = upprepar mönstret
+     auto-fill = så många kolumner som får plats på skärmen automatiskt (responsivt)
+     minmax(200px, 1fr) = varje kolumn är minst 200px bred, men kan växa för att dela utrymmet jämnt (1fr = en "fraction" av tillgängligt utrymme)
+  */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 25px;
-  margin: 40px auto;
-  max-width: 1200px;
-  padding: 0 20px;
+  gap: 25px; /* Mellanrum mellan bokkorten (25 pixlar) */
+  margin: 40px auto; /* 40px ovanför och under, auto på sidorna = centrerad */
+  max-width: 1200px; /* Maximal bredd är 1200 pixlar */
+  padding: 0 20px; /* Inre mellanrum: 0 ovanför/under, 20px på sidorna */
 }
 
-/* Bokkort */
+/* Meddelanden i resultat-området (när inga böcker finns) */
+#results p {
+  color: white; /* Textfärgen är vit */
+  font-size: 18px; /* Textstorleken är 18 pixlar */
+  text-align: center; /* Centrerar texten */
+  margin-top: 20px; /* Mellanrum ovanför texten (20 pixlar) */
+  grid-column: 1 / -1; /* Tar hela bredden i gridet (från kolumn 1 till sista kolumnen) */
+}
+
+/* Varje bokkort med vit bakgrund och skugga */
 .book-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: 0.3s;
+  background: white; /* Bakgrundsfärgen är vit */
+  padding: 15px; /* Inre mellanrum runt innehållet (15 pixlar på alla sidor) */
+  border-radius: 12px; /* Rundade hörn med 12 pixlars radie */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Skugga under kortet: 0 åt höger, 4px nedåt, 15px oskärpa, svart med 20% opacitet */
+  transition: 0.3s; /* Alla förändringar (t.ex. när man hovrar) tar 0.3 sekunder (mjuk övergång) */
 }
-/* Kortet lyfts lite när man hovrar över det */
+
+/* Kortet lyfts lite när man hovrar över det och det sker mjukt
+   transform = förändra form/position
+   translateY = flytta upp eller ner
+   -10px = flytta 10 pixlar uppåt (minus är uppåt, plus är nedåt)
+   Mer skugga skapas när man hovrar.
+*/
 .book-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transform: translateY(-10px); /* Flyttar kortet 10 pixlar uppåt */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* Större skugga: 0 åt höger, 8px nedåt, 25px oskärpa, svart med 30% opacitet */
 }
-/* Bokomslaget fyller kortets bredd */
+
+/* Bokomslaget fyller hela kortets bredd */
 .book-card img {
-  width: 100%;
-  border-radius: 8px;
+  width: 100%; /* Bredden är 100% av förälder-elementet (kortet) */
+  border-radius: 8px; /* Rundade hörn med 8 pixlars radie */
 }
-/* Boktiteln i kortet */
+
+/* Boktiteln i kortet
+   (.book-card h3 = alla h3 som är inuti ett element med class book-card)
+*/
 .book-card h3 {
-  font-size: 16px;
-  margin: 10px 0 5px 0;
-  color: #333;
+  font-size: 16px; /* Textstorleken är 16 pixlar */
+  margin: 10px 0 5px 0; /* Mellanrum: 10px ovanför, 0 på sidorna, 5px under */
+  color: #333; /* Textfärgen är mörkgrå (nästan svart) */
 }
-/* Författarnamnet i kortet */
+
+/* Författarnamnet i kortet
+   (.book-card p = alla p som är inuti ett element med class book-card)
+*/
 .book-card p {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
+  font-size: 14px; /* Textstorleken är 14 pixlar */
+  color: #666; /* Textfärgen är mellangrå */
+  margin: 0; /* Inget mellanrum runt texten */
 }

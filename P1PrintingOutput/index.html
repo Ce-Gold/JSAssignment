@@ -1,44 +1,97 @@
 <!DOCTYPE html>
+<!-- Detta är ett HTML5-dokument -->
 <html lang="sv">
+<!-- Början på HTML-dokumentet, lang="sv" säger att språket är svenska -->
 <head>
+  <!-- Head-sektionen innehåller metadata och länkar som inte visas på sidan -->
+
   <meta charset="UTF-8">
+  <!-- Anger teckenkodning UTF-8 för att stödja svenska tecken (åäö) och andra specialtecken -->
+
   <!-- Sidans titel som visas i fliken -->
   <title>Hitta din bok</title>
+  <!-- Texten som visas i webbläsarens flik/tab -->
+
   <!-- Länk till CSS-filen för styling -->
   <link rel="stylesheet" href="style.css">
+  <!-- Kopplar HTML-filen till CSS-filen som styr utseendet -->
 </head>
 
 <body>
+<!-- Body innehåller allt som visas på själva sidan -->
+
 <!-- Huvudrubrik på sidan -->
 <h1>Hitta din bok</h1>
+<!-- h1 = Heading 1, rubrik 1 -->
 
 <!-- Sökfält + knapp -->
 <!-- Container som håller sökfältet, knappen och sortering centrerade -->
 <div class="search-section">
+  <!-- div =  ett containerelement som grupperar andra element -->
+  <!-- class="search-section" kopplar till CSS för styling -->
+
   <!-- Label för sökrutan (tom men behövs för tillgänglighet) -->
   <label for="searchInput"></label>
-  <!-- Sökrutan där användaren skriver boknamn -->
+  <!-- label kopplas till input-fältet via "for" attributet, viktigt för tillgänglighet (skärmläsare) -->
+
+  <!-- Sökrutan där användaren skriver/söker efter böcker -->
   <input id="searchInput" type="text" placeholder="Skriv ett boknamn...">
-  <!-- Knappen man klickar på för att starta sökningen-->
+  <!-- input = ett fält där användaren kan skriva text -->
+  <!-- id="searchInput" används för att JavaScript ska kunna hitta elementet -->
+  <!-- type="text" anger att det är ett textfält -->
+  <!-- placeholder = grå hjälptext som visas innan användaren skriver något -->
+
+  <!-- Knappen man klickar på för att starta sökningen -->
   <button id="searchBtn">Sök</button>
+  <!-- button = en klickbar knapp -->
+  <!-- id="searchBtn" används för att JavaScript ska kunna lyssna på klick -->
+  <!-- Texten "Sök" är det som visas på knappen -->
+
   <!-- Tom plats där felmeddelanden visas -->
   <p id="searchMessage" class="message"></p>
+  <!-- p = paragraph, ett textstycke -->
+  <!-- id="searchMessage" används för att JavaScript ska kunna fylla i text här -->
+  <!-- class="message" kopplar till CSS för styling -->
+  <!-- Tom från början, JavaScript fyller i text när något händer -->
 
-  <!-- Dropdown-meny för att sortera resultat ,som är dold från början -->
+  <!-- Dropdown-meny för att sortera resultat, som är dold från början -->
   <select id="sortSelect" class="sort-select" style="display:none;">
+    <!-- select = en dropdown-meny där användaren kan välja ett alternativ -->
+    <!-- id="sortSelect" används för att JavaScript ska kunna kontrollera den -->
+    <!-- class="sort-select" kopplar till CSS för styling -->
+    <!-- style="display:none;" gör att menyn är dold när sidan laddas -->
+
     <option value="">Sortera resultat</option>
+    <!-- option = ett alternativ i dropdown-menyn -->
+    <!-- value="" betyder att inget sorteringsval är aktivt -->
+    <!-- "Sortera resultat" är texten som visas i menyn -->
+
     <option value="title-asc">Titel A–Ö</option>
+    <!-- value="title-asc" är ett ID som JavaScript använder för att veta vilket sorteringsval användaren valde -->
+    <!-- "Titel A–Ö" är texten som visas i menyn -->
+
     <option value="title-desc">Titel Ö–A</option>
+    <!-- Sorterar böcker efter titel, från Ö till A (omvänd ordning) -->
+
     <option value="year-asc">Utgivningsår stigande</option>
+    <!-- Sorterar böcker efter utgivningsår, äldsta först -->
+
     <option value="year-desc">Utgivningsår fallande</option>
+    <!-- Sorterar böcker efter utgivningsår, nyaste först -->
   </select>
 </div>
 
 <!-- Resultat visas här -->
 <div id="results"></div>
+<!-- Tom container där JavaScript kommer att lägga in bokkorten dynamiskt -->
+<!-- id="results" används för att JavaScript ska kunna fylla i innehåll här -->
 
 <!-- Länk till JavaScript-filen som hanterar sökningen -->
 <script src="app.js"></script>
+<!-- script = laddar in JavaScript-filen som gör sidan interaktiv -->
+<!-- src="app.js" pekar på filen som innehåller all JavaScript-kod -->
 
 </body>
+<!-- Slutet på body-sektionen -->
 </html>
+<!-- Slutet på HTML-dokumentet -->
