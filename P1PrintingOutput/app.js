@@ -1,3 +1,5 @@
+
+
 // Hämtar sökrutan där användaren skriver
 const searchInput = document.getElementById("searchInput");
 
@@ -32,6 +34,7 @@ async function searchBooks() {
 
   // Döljer sorteringsmenyn när en ny sökning startar
   sortSelect.style.display = "none";
+
 
   // Kollar om användaren skrev något
   if (!query) {
@@ -75,9 +78,12 @@ async function searchBooks() {
     // Skickar böckerna vidare för att visas på sidan
     displayResults(lastBooks);
 
+
+
   } catch (err) {
     // Visar ett felmeddelande om något går fel
     searchMessage.textContent = "Kunde inte hämta böcker.";
+
     // skriver ut felet i webläsarens konsol
     console.error(err);
   }

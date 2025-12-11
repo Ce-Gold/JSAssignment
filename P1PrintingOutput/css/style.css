@@ -1,3 +1,6 @@
+
+
+/* INTE DENNA CSS FIL. SE DEN ANDRA*/
 /* Bas-stil */
 body {
   font-family: Arial, sans-serif;
@@ -25,17 +28,19 @@ input {
 
 button {
   padding: 10px 15px;
-  font-size: 16px;
+  /*font-size: 16px;*/
+  font-size: 160px;
   cursor: pointer;
 }
 
 /* Resultatkorten */
-#results {
+results{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px; /* Mellanrum mellan böckerna */
+  gap: 15px;/ /* Mellanrum mellan böckerna */
   margin-top: 20px;
 }
+
 
 .book {
   border: 1px solid #ccc;

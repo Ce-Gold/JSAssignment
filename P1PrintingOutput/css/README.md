@@ -22,5 +22,5 @@ Användare kan se bokomslag, titlar, författare och sortera resultaten.
 - HTML5 (semantisk struktur)
 - CSS3 (Grid layout, hover-effekter)
 - JavaScript (fetch API, dynamisk rendering)
-- Open Library API
+- Open Library API.
 
