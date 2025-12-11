@@ -1,4 +1,5 @@
-/* Grundläggande stil för hela sidan */
+/* Detta är den korrekta filen.
+Grundläggande stil för hela sidan */
 body {
   font-family: Arial, sans-serif; /* Väljer typsnittet Arial, sans-serif är backup om Arial saknas */
   margin: 0; /* Tar bort mellanrum automatiskt runt hela sidan */
